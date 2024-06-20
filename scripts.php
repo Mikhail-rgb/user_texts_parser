@@ -102,6 +102,9 @@ function replaceDates(string $separator): string
 
     $result = [];
     $pattern = '/\d{2}\/\d{2}\/\d{2}/';
+    if (!is_dir('./output_texts')) {
+        mkdir('./output_texts');
+    }
     foreach ($userTexts as $id => $userText) {
         if (isset($userText['files'])) {
             $replacesCounter = 0;
